@@ -1,0 +1,413 @@
+/**
+ * Coach styles for City Club Theme
+ */
+
+/* Coaches Archive Page */
+.coaches-archive {
+  padding: 60px 0;
+}
+
+.coaches-filter {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.coaches-filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.coaches-filter-form select,
+.coaches-filter-form input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.coaches-filter-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.coaches-filter-form button:hover {
+  background-color: var(--primary-hover);
+}
+
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Coach Card */
+.coach-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.coach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.coach-card-image {
+  height: 200px;
+  position: relative;
+}
+
+.coach-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.coach-card:hover .coach-card-image img {
+  transform: scale(1.05);
+}
+
+.coach-card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.coach-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.coach-card-header {
+  margin-bottom: 15px;
+}
+
+.coach-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.coach-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.coach-card-specializations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.coach-card-specialization {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.coach-card-experience {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.coach-card-experience svg {
+  margin-right: 5px;
+  color: var(--primary-color);
+}
+
+.coach-card-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.coach-card-rating svg {
+  color: #ffc107;
+  margin-right: 2px;
+}
+
+.coach-card-description {
+  color: #6c757d;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.coach-card-footer {
+  margin-top: auto;
+}
+
+.coach-card-button {
+  display: inline-block;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 0;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.coach-card-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Coach Single Page */
+.coach-single {
+  padding: 60px 0;
+}
+
+.coach-header {
+  margin-bottom: 40px;
+}
+
+.coach-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.coach-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.coach-meta-item {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+}
+
+.coach-meta-item svg {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.coach-featured-image {
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.coach-featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.coach-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.coach-bio {
+  margin-bottom: 30px;
+}
+
+.coach-bio h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.coach-specializations {
+  margin-bottom: 30px;
+}
+
+.coach-specializations-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.coach-specializations-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.coach-specialization {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.coach-specialization svg {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.coach-certifications {
+  margin-bottom: 30px;
+}
+
+.coach-certifications-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.coach-certifications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.coach-certification {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.coach-certification svg {
+  margin-right: 10px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.coach-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.coach-sidebar-widget {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.coach-sidebar-widget-title {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.coach-sidebar-widget-content {
+  padding: 20px;
+}
+
+.coach-schedule {
+  margin-bottom: 0;
+}
+
+.coach-schedule-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.coach-schedule-item:last-child {
+  border-bottom: none;
+}
+
+.coach-schedule-day {
+  font-weight: 600;
+}
+
+.coach-contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.coach-contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.coach-contact-item svg {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.coach-cta {
+  text-align: center;
+}
+
+.coach-cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.coach-cta-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .coach-content {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .coaches-filter-form {
+    flex-direction: column;
+  }
+
+  .coach-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .coach-specializations-list {
+    grid-template-columns: 1fr;
+  }
+}
