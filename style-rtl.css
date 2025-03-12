@@ -1,0 +1,161 @@
+/*
+Theme Name: City Club RTL
+Template: city-club
+Text Direction: rtl
+*/
+
+/* RTL styles for Arabic language */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Header RTL styles */
+body.rtl .site-header .container {
+  flex-direction: row-reverse;
+}
+
+body.rtl .top-links a {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+body.rtl .top-actions {
+  flex-direction: row-reverse;
+}
+
+body.rtl .language-switcher {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+body.rtl #primary-menu {
+  flex-direction: row-reverse;
+}
+
+body.rtl #primary-menu li {
+  margin: 0 0 0 15px;
+}
+
+body.rtl #primary-menu a::after {
+  left: auto;
+  right: 0;
+}
+
+body.rtl .header-actions {
+  flex-direction: row-reverse;
+}
+
+body.rtl .search-toggle {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+/* Hero RTL styles */
+body.rtl .hero-nav {
+  flex-direction: row-reverse;
+}
+
+/* Activities RTL styles */
+body.rtl .activity-card-meta {
+  flex-direction: row-reverse;
+}
+
+body.rtl .activity-card-footer {
+  flex-direction: row-reverse;
+}
+
+body.rtl .activity-meta {
+  flex-direction: row-reverse;
+}
+
+body.rtl .activity-meta-item svg {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+body.rtl .activity-benefit svg {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* Club RTL styles */
+body.rtl .club-card-location svg {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+body.rtl .club-card-footer {
+  flex-direction: row-reverse;
+}
+
+body.rtl .club-card-link svg {
+  margin-left: 0;
+  margin-right: 5px;
+  transform: rotate(180deg);
+}
+
+body.rtl .club-card-link:hover svg {
+  transform: translateX(-3px) rotate(180deg);
+}
+
+body.rtl .club-meta-item svg {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+body.rtl .club-amenity svg {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* Coach RTL styles */
+body.rtl .coach-meta-item svg {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+body.rtl .coach-certification svg {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* Footer RTL styles */
+body.rtl .newsletter-form {
+  flex-direction: row-reverse;
+}
+
+body.rtl .newsletter-form input {
+  border-radius: 0 4px 4px 0;
+}
+
+body.rtl .newsletter-form button {
+  border-radius: 4px 0 0 4px;
+}
+
+body.rtl .contact-item svg {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+body.rtl .footer-links a svg {
+  margin-right: 0;
+  margin-left: 8px;
+  transform: rotate(180deg);
+}
+
+body.rtl .social-link {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+/* Responsive RTL styles */
+@media (max-width: 991px) {
+  body.rtl .menu-toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, -5px);
+  }
+
+  body.rtl .menu-toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, 7px);
+  }
+}

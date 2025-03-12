@@ -1,12 +1,6 @@
 import React from "react";
 import ProHeader from "../layout/ProHeader";
 import ProHero from "./ProHero";
-import ProFeatures from "./ProFeatures";
-import ProActivities from "./ProActivities";
-import ProClubs from "./ProClubs";
-import ProCoaches from "./ProCoaches";
-import ProTestimonials from "./ProTestimonials";
-import ProCTA from "./ProCTA";
 import ProFooter from "../layout/ProFooter";
 import { motion } from "framer-motion";
 
@@ -25,24 +19,6 @@ const ProDesignHome = () => {
       >
         {/* Hero Section */}
         <ProHero />
-
-        {/* Features Section */}
-        <ProFeatures />
-
-        {/* Activities Section */}
-        <ProActivities />
-
-        {/* Clubs Section */}
-        <ProClubs />
-
-        {/* Coaches Section */}
-        <ProCoaches />
-
-        {/* Testimonials Section */}
-        <ProTestimonials />
-
-        {/* CTA Section */}
-        <ProCTA />
       </motion.main>
 
       {/* Footer */}

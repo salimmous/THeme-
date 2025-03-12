@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: City Club 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/city-club\n"
+"POT-Creation-Date: 2023-09-01T12:00:00+00:00\n"
+"PO-Revision-Date: 2023-09-01 12:00+0000\n"
+"Last-Translator: Admin <admin@cityclub.ma>\n"
+"Language-Team: French (France)\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: city-club\n"
+
+#: header.php:52
+msgid "Locations"
+msgstr "Emplacements"
+
+#: header.php:55
+msgid "Careers"
+msgstr "Carrières"
+
+#: header.php:58
+msgid "Become a Franchisee"
+msgstr "Devenir Franchisé"
+
+#: header.php:65
+msgid "French"
+msgstr "Français"
+
+#: header.php:66
+msgid "Arabic"
+msgstr "Arabe"
+
+#: header.php:71
+msgid "Member Area"
+msgstr "Espace Membre"
+
+#: header.php:97
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:112
+msgid "Free Trial"
+msgstr "Essai Gratuit"
+
+#: footer.php:27
+msgid "Join Our Newsletter"
+msgstr "Rejoignez Notre Newsletter"
+
+#: footer.php:31
+msgid "Stay updated with our latest news and special offers."
+msgstr "Restez informé de nos dernières actualités et offres spéciales."
+
+#: footer.php:37
+msgid "Your email address"
+msgstr "Votre adresse email"
+
+#: footer.php:42
+msgid "Subscribe"
+msgstr "S'abonner"
+
+#: footer.php:58
+msgid "About Us"
+msgstr "À Propos"
+
+#: footer.php:62
+msgid "The premier fitness network in Morocco with over 50 clubs nationwide."
+msgstr "Le premier réseau de fitness au Maroc avec plus de 50 clubs à travers le pays."
+
+#: footer.php:76
+msgid "Quick Links"
+msgstr "Liens Rapides"
+
+#: footer.php:79
+msgid "Home"
+msgstr "Accueil"
+
+#: footer.php:82
+msgid "Clubs"
+msgstr "Clubs"
+
+#: footer.php:85
+msgid "Activities"
+msgstr "Activités"
+
+#: footer.php:88
+msgid "Coaches"
+msgstr "Coachs"
+
+#: footer.php:91
+msgid "Contact"
+msgstr "Contact"
+
+#: footer.php:98
+msgid "Contact Info"
+msgstr "Informations de Contact"
+
+#: footer.php:121
+msgid "Follow Us"
+msgstr "Suivez-Nous"
+
+#: footer.php:151
+msgid "&copy; %1$s City Club. All Rights Reserved."
+msgstr "&copy; %1$s City Club. Tous Droits Réservés."
+
+#: inc/custom-post-types.php:18
+msgid "Clubs"
+msgstr "Clubs"
+
+#: inc/custom-post-types.php:19
+msgid "Club"
+msgstr "Club"
+
+#: inc/custom-post-types.php:52
+msgid "Activities"
+msgstr "Activités"
+
+#: inc/custom-post-types.php:53
+msgid "Activity"
+msgstr "Activité"
+
+#: inc/custom-post-types.php:86
+msgid "Coaches"
+msgstr "Coachs"
+
+#: inc/custom-post-types.php:87
+msgid "Coach"
+msgstr "Coach"
+
+#: inc/custom-post-types.php:120
+msgid "Testimonials"
+msgstr "Témoignages"
+
+#: inc/custom-post-types.php:121
+msgid "Testimonial"
+msgstr "Témoignage"

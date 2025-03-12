@@ -1,12 +1,13 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Logo from "./Logo";
 
 const MainNavbar = () => {
   return (
     <header className="w-full bg-gray-800 text-white">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="text-xl font-bold">CITY CLUB</h1>
+          <Logo variant="light" size="medium" />
         </div>
         <nav className="hidden md:flex space-x-6">
           <a href="#" className="hover:text-orange-400">

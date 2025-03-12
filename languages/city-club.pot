@@ -1,0 +1,492 @@
+# Copyright (C) 2023 City Club Theme Team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: City Club 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/city-club\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-09-01T12:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: city-club\n"
+
+#: 404.php:18
+msgid "Oops! That page can't be found."
+msgstr ""
+
+#: 404.php:22
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:41
+msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:27
+msgid "Join Our Newsletter"
+msgstr ""
+
+#: footer.php:31
+msgid "Stay updated with our latest news and special offers."
+msgstr ""
+
+#: footer.php:37
+msgid "Your email address"
+msgstr ""
+
+#: footer.php:42
+msgid "Subscribe"
+msgstr ""
+
+#: footer.php:58
+msgid "About Us"
+msgstr ""
+
+#: footer.php:62
+msgid "The premier fitness network in Morocco with over 50 clubs nationwide."
+msgstr ""
+
+#: footer.php:76
+msgid "Quick Links"
+msgstr ""
+
+#: footer.php:79
+msgid "Home"
+msgstr ""
+
+#: footer.php:82
+msgid "Clubs"
+msgstr ""
+
+#: footer.php:85
+msgid "Activities"
+msgstr ""
+
+#: footer.php:88
+msgid "Coaches"
+msgstr ""
+
+#: footer.php:91
+msgid "Contact"
+msgstr ""
+
+#: footer.php:98
+msgid "Contact Info"
+msgstr ""
+
+#: footer.php:121
+msgid "Follow Us"
+msgstr ""
+
+#: footer.php:151
+msgid "&copy; %1$s City Club. All Rights Reserved."
+msgstr ""
+
+#: header.php:26
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:52
+msgid "Locations"
+msgstr ""
+
+#: header.php:55
+msgid "Careers"
+msgstr ""
+
+#: header.php:58
+msgid "Become a Franchisee"
+msgstr ""
+
+#: header.php:65
+msgid "French"
+msgstr ""
+
+#: header.php:66
+msgid "Arabic"
+msgstr ""
+
+#: header.php:71
+msgid "Member Area"
+msgstr ""
+
+#: header.php:97
+msgid "Menu"
+msgstr ""
+
+#: header.php:112
+msgid "Free Trial"
+msgstr ""
+
+#: inc/custom-post-types.php:18
+msgid "Clubs"
+msgstr ""
+
+#: inc/custom-post-types.php:19
+msgid "Club"
+msgstr ""
+
+#: inc/custom-post-types.php:20
+msgid "Add New Club"
+msgstr ""
+
+#: inc/custom-post-types.php:21
+msgid "Edit Club"
+msgstr ""
+
+#: inc/custom-post-types.php:22
+msgid "New Club"
+msgstr ""
+
+#: inc/custom-post-types.php:23
+msgid "View Club"
+msgstr ""
+
+#: inc/custom-post-types.php:24
+msgid "Search Clubs"
+msgstr ""
+
+#: inc/custom-post-types.php:25
+msgid "No clubs found"
+msgstr ""
+
+#: inc/custom-post-types.php:26
+msgid "No clubs found in Trash"
+msgstr ""
+
+#: inc/custom-post-types.php:52
+msgid "Activities"
+msgstr ""
+
+#: inc/custom-post-types.php:53
+msgid "Activity"
+msgstr ""
+
+#: inc/custom-post-types.php:54
+msgid "Add New Activity"
+msgstr ""
+
+#: inc/custom-post-types.php:55
+msgid "Edit Activity"
+msgstr ""
+
+#: inc/custom-post-types.php:56
+msgid "New Activity"
+msgstr ""
+
+#: inc/custom-post-types.php:57
+msgid "View Activity"
+msgstr ""
+
+#: inc/custom-post-types.php:58
+msgid "Search Activities"
+msgstr ""
+
+#: inc/custom-post-types.php:59
+msgid "No activities found"
+msgstr ""
+
+#: inc/custom-post-types.php:60
+msgid "No activities found in Trash"
+msgstr ""
+
+#: inc/custom-post-types.php:86
+msgid "Coaches"
+msgstr ""
+
+#: inc/custom-post-types.php:87
+msgid "Coach"
+msgstr ""
+
+#: inc/custom-post-types.php:88
+msgid "Add New Coach"
+msgstr ""
+
+#: inc/custom-post-types.php:89
+msgid "Edit Coach"
+msgstr ""
+
+#: inc/custom-post-types.php:90
+msgid "New Coach"
+msgstr ""
+
+#: inc/custom-post-types.php:91
+msgid "View Coach"
+msgstr ""
+
+#: inc/custom-post-types.php:92
+msgid "Search Coaches"
+msgstr ""
+
+#: inc/custom-post-types.php:93
+msgid "No coaches found"
+msgstr ""
+
+#: inc/custom-post-types.php:94
+msgid "No coaches found in Trash"
+msgstr ""
+
+#: inc/custom-post-types.php:120
+msgid "Testimonials"
+msgstr ""
+
+#: inc/custom-post-types.php:121
+msgid "Testimonial"
+msgstr ""
+
+#: inc/custom-post-types.php:122
+msgid "Add New Testimonial"
+msgstr ""
+
+#: inc/custom-post-types.php:123
+msgid "Edit Testimonial"
+msgstr ""
+
+#: inc/custom-post-types.php:124
+msgid "New Testimonial"
+msgstr ""
+
+#: inc/custom-post-types.php:125
+msgid "View Testimonial"
+msgstr ""
+
+#: inc/custom-post-types.php:126
+msgid "Search Testimonials"
+msgstr ""
+
+#: inc/custom-post-types.php:127
+msgid "No testimonials found"
+msgstr ""
+
+#: inc/custom-post-types.php:128
+msgid "No testimonials found in Trash"
+msgstr ""
+
+#: inc/customizer.php:25
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:26
+msgid "Customize the City Club theme"
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer.php:37
+msgid "General theme settings"
+msgstr ""
+
+#: inc/customizer.php:47
+msgid "Header Settings"
+msgstr ""
+
+#: inc/customizer.php:48
+msgid "Customize the header section"
+msgstr ""
+
+#: inc/customizer.php:58
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer.php:59
+msgid "Customize the footer section"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Social Media"
+msgstr ""
+
+#: inc/customizer.php:70
+msgid "Add your social media links"
+msgstr ""
+
+#: inc/customizer.php:80
+msgid "Contact Information"
+msgstr ""
+
+#: inc/customizer.php:81
+msgid "Add your contact information"
+msgstr ""
+
+#: inc/customizer.php:91
+msgid "Map Settings"
+msgstr ""
+
+#: inc/customizer.php:92
+msgid "Configure the interactive map"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Primary Color"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "Choose the primary color for the theme"
+msgstr ""
+
+#: inc/customizer.php:114
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:115
+msgid "Choose the secondary color for the theme"
+msgstr ""
+
+#: inc/customizer.php:126
+msgid "Display Top Bar"
+msgstr ""
+
+#: inc/customizer.php:127
+msgid "Toggle the top bar display"
+msgstr ""
+
+#: inc/customizer.php:138
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/customizer.php:139
+msgid "Make the header sticky on scroll"
+msgstr ""
+
+#: inc/customizer.php:150
+msgid "Footer Logo"
+msgstr ""
+
+#: inc/customizer.php:151
+msgid "Upload your footer logo"
+msgstr ""
+
+#: inc/customizer.php:162
+msgid "Footer Text"
+msgstr ""
+
+#: inc/customizer.php:163
+msgid "Add custom text to the footer"
+msgstr ""
+
+#: inc/customizer.php:174
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/customizer.php:185
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/customizer.php:207
+msgid "LinkedIn URL"
+msgstr ""
+
+#: inc/customizer.php:218
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/customizer.php:229
+msgid "Address"
+msgstr ""
+
+#: inc/customizer.php:240
+msgid "Phone Number"
+msgstr ""
+
+#: inc/customizer.php:251
+msgid "Email Address"
+msgstr ""
+
+#: inc/customizer.php:262
+msgid "Google Maps API Key"
+msgstr ""
+
+#: inc/customizer.php:273
+msgid "Default Map Center Latitude"
+msgstr ""
+
+#: inc/customizer.php:284
+msgid "Default Map Center Longitude"
+msgstr ""
+
+#: inc/customizer.php:295
+msgid "Default Map Zoom Level"
+msgstr ""
+
+#: inc/template-tags.php:29
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:45
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:62
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:65
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:69
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:79
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:79
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:79
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:86
+msgid "Edit %s"
+msgstr ""
+
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid "Ready to publish your first post? <a href="%1$s">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid "It seems we can't find what you're looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:25
+#: template-parts/content.php:53
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:40
+msgid "Continue reading<span class="screen-reader-text"> "%s"</span>"
+msgstr ""
