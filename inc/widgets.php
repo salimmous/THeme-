@@ -10,71 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register widget areas
+ * Register additional widget areas
+ * 
+ * Note: The main widget areas are already registered in functions.php
+ * This function only registers the Newsletter widget area to avoid function redeclaration
  */
-function city_club_widgets_init() {
-	// Main Sidebar.
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'city-club' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'city-club' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	// Footer Widgets.
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Footer 1', 'city-club' ),
-			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Add widgets here to appear in the first footer column.', 'city-club' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Footer 2', 'city-club' ),
-			'id'            => 'footer-2',
-			'description'   => esc_html__( 'Add widgets here to appear in the second footer column.', 'city-club' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Footer 3', 'city-club' ),
-			'id'            => 'footer-3',
-			'description'   => esc_html__( 'Add widgets here to appear in the third footer column.', 'city-club' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Footer 4', 'city-club' ),
-			'id'            => 'footer-4',
-			'description'   => esc_html__( 'Add widgets here to appear in the fourth footer column.', 'city-club' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		)
-	);
-
+function city_club_register_additional_widget_areas() {
 	// Newsletter Widget Area.
 	register_sidebar(
 		array(
@@ -88,7 +29,7 @@ function city_club_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'city_club_widgets_init' );
+add_action( 'widgets_init', 'city_club_register_additional_widget_areas' );
 
 /**
  * Custom City Club Contact Info Widget
