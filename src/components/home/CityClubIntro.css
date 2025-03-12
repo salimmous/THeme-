@@ -1,0 +1,84 @@
+/**
+ * City Club Intro styles for City Club Theme
+ */
+
+.city-club-intro {
+  width: 100%;
+  padding: 4rem 1rem;
+  background-color: white;
+}
+
+.city-club-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.city-club-intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.city-club-intro-text {
+  width: 100%;
+}
+
+.city-club-intro-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+  margin-bottom: 0.5rem;
+}
+
+.city-club-intro-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f26e21; /* primary color */
+  margin-bottom: 1.5rem;
+}
+
+.city-club-intro-description {
+  color: #6b7280; /* gray-700 */
+  margin-bottom: 1.5rem;
+}
+
+.city-club-intro-button {
+  background-color: #f26e21; /* primary color */
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.city-club-intro-button:hover {
+  background-color: #d85a10; /* primary hover */
+}
+
+.city-club-intro-image {
+  width: 100%;
+}
+
+.city-club-intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .city-club-intro-content {
+    flex-direction: row;
+  }
+
+  .city-club-intro-text {
+    width: 50%;
+  }
+
+  .city-club-intro-image {
+    width: 50%;
+  }
+}

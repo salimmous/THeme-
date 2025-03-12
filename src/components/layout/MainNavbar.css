@@ -1,0 +1,65 @@
+/**
+ * Main Navigation Bar styles for City Club Theme
+ */
+
+.main-navbar {
+  width: 100%;
+  background-color: #1f2937; /* gray-800 */
+  color: white;
+}
+
+.main-navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.main-navbar-logo h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.main-navbar-nav {
+  display: none;
+}
+
+.main-navbar-nav a {
+  color: white;
+  margin-left: 1.5rem;
+  transition: color 0.3s;
+}
+
+.main-navbar-nav a:hover {
+  color: #f97316; /* orange-400 */
+}
+
+.main-navbar-button {
+  background-color: #f97316; /* orange-500 */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.main-navbar-button:hover {
+  background-color: #ea580c; /* orange-600 */
+}
+
+@media (min-width: 768px) {
+  .main-navbar-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+}

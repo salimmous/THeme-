@@ -1,0 +1,145 @@
+/**
+ * Club Network styles for City Club Theme
+ */
+
+.club-network {
+  width: 100%;
+  padding: 4rem 1rem;
+  background-color: white;
+}
+
+.club-network-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.club-network-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.club-network-map {
+  width: 100%;
+}
+
+.club-network-map img {
+  width: 100%;
+  height: auto;
+}
+
+.club-network-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #fed7aa; /* orange-200 */
+  border-radius: 0.5rem;
+  background-color: #fff7ed; /* orange-50 */
+}
+
+.club-network-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.club-network-info-title {
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+}
+
+.club-network-info-highlight {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  background-color: #f26e21; /* primary color */
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.club-network-info-stats {
+  text-align: right;
+}
+
+.club-network-info-count {
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+}
+
+.club-network-info-open {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f26e21; /* primary color */
+}
+
+.club-network-info-coming {
+  font-size: 0.875rem;
+  color: #6b7280; /* gray-600 */
+}
+
+.club-network-info-members {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.club-network-info-members-badge {
+  display: inline-block;
+  background-color: #f26e21; /* primary color */
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+.club-network-text {
+  width: 100%;
+}
+
+.club-network-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+  margin-bottom: 0.5rem;
+}
+
+.club-network-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f26e21; /* primary color */
+  margin-bottom: 1.5rem;
+}
+
+.club-network-description {
+  color: #6b7280; /* gray-700 */
+  margin-bottom: 1.5rem;
+}
+
+.club-network-button {
+  background-color: #f26e21; /* primary color */
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.club-network-button:hover {
+  background-color: #d85a10; /* primary hover */
+}
+
+@media (min-width: 768px) {
+  .club-network-content {
+    flex-direction: row;
+  }
+
+  .club-network-map {
+    width: 50%;
+  }
+
+  .club-network-text {
+    width: 50%;
+  }
+}

@@ -1,0 +1,101 @@
+/**
+ * Certified Coaches styles for City Club Theme
+ */
+
+.certified-coaches {
+  width: 100%;
+  padding: 4rem 1rem;
+  background-color: white;
+}
+
+.certified-coaches-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certified-coaches-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+}
+
+.certified-coaches-text {
+  width: 100%;
+}
+
+.certified-coaches-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+  margin-bottom: 0.5rem;
+}
+
+.certified-coaches-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f26e21; /* primary color */
+  margin-bottom: 1.5rem;
+}
+
+.certified-coaches-description {
+  color: #6b7280; /* gray-700 */
+  margin-bottom: 1.5rem;
+}
+
+.certified-coaches-image {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.certified-coaches-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.certified-coaches-benefits {
+  width: 100%;
+}
+
+.certified-coaches-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.certified-coaches-benefit-icon {
+  width: 1rem;
+  height: 1rem;
+  background-color: #f26e21; /* primary color */
+  border-radius: 9999px;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.certified-coaches-benefit-content h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f26e21; /* primary color */
+  margin-bottom: 0.25rem;
+}
+
+.certified-coaches-benefit-content p {
+  color: #6b7280; /* gray-700 */
+}
+
+@media (min-width: 768px) {
+  .certified-coaches-content {
+    flex-direction: row;
+  }
+
+  .certified-coaches-text {
+    width: 50%;
+  }
+
+  .certified-coaches-benefits {
+    width: 50%;
+  }
+}

@@ -1,0 +1,43 @@
+/**
+ * Logo styles for City Club Theme
+ */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-weight: 700;
+}
+
+.logo-text-small {
+  font-size: 1.25rem;
+}
+
+.logo-text-medium {
+  font-size: 1.5rem;
+}
+
+.logo-text-large {
+  font-size: 2.5rem;
+}
+
+.logo-text-dark {
+  color: #000000;
+}
+
+.logo-text-light {
+  color: #ffffff;
+}
+
+.logo-highlight {
+  color: #f26e21; /* primary color */
+}
+
+.logo-superscript {
+  color: #f26e21; /* primary color */
+  font-size: 0.625rem;
+  margin-left: 0.125rem;
+  vertical-align: super;
+}

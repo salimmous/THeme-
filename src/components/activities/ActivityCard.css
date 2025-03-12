@@ -1,0 +1,141 @@
+/**
+ * Activity Card styles for City Club Theme
+ */
+
+.activity-card {
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
+}
+
+.activity-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.activity-card-image-container {
+  position: relative;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.activity-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.activity-card:hover .activity-card-image {
+  transform: scale(1.05);
+}
+
+.activity-card-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.activity-card-badge.beginner {
+  background-color: #dcfce7; /* green-100 */
+  color: #166534; /* green-800 */
+}
+
+.activity-card-badge.intermediate {
+  background-color: #fef9c3; /* yellow-100 */
+  color: #854d0e; /* yellow-800 */
+}
+
+.activity-card-badge.advanced {
+  background-color: #fee2e2; /* red-100 */
+  color: #991b1b; /* red-800 */
+}
+
+.activity-card-header {
+  padding: 1rem 1rem 0.5rem;
+}
+
+.activity-card-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.activity-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.activity-card-duration {
+  font-size: 0.75rem;
+  background-color: #f3f4f6; /* gray-100 */
+  color: #4b5563; /* gray-600 */
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.activity-card-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  background-color: #f3f4f6; /* gray-100 */
+  color: #4b5563; /* gray-600 */
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.activity-card-content {
+  padding: 0.5rem 1rem;
+  flex-grow: 1;
+}
+
+.activity-card-description {
+  font-size: 0.875rem;
+  color: #6b7280; /* gray-500 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.activity-card-footer {
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.activity-card-button {
+  width: 100%;
+  background-color: #f26e21; /* primary color */
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.activity-card-button:hover {
+  background-color: #d85a10; /* primary hover */
+}
+
+.activity-card-button-icon {
+  font-size: 1rem;
+}

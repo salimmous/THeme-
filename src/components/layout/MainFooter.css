@@ -1,0 +1,112 @@
+/**
+ * Main Footer styles for City Club Theme
+ */
+
+.main-footer {
+  width: 100%;
+}
+
+.main-footer-banner {
+  background-color: #f26e21; /* primary color */
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.main-footer-main {
+  background-color: black;
+  color: white;
+  padding: 3rem 0;
+}
+
+.main-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.main-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.main-footer-column h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.main-footer-description {
+  color: #9ca3af; /* gray-400 */
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.main-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  space-y: 0.5rem;
+}
+
+.main-footer-link {
+  margin-bottom: 0.5rem;
+}
+
+.main-footer-link a {
+  color: #9ca3af; /* gray-400 */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.main-footer-link a:hover {
+  color: white;
+}
+
+.main-footer-social {
+  margin-top: 3rem;
+}
+
+.main-footer-social h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.main-footer-social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-footer-social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: #f26e21; /* primary color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.main-footer-social-link:hover {
+  background-color: #d85a10; /* primary hover */
+}
+
+.main-footer-copyright {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #374151; /* gray-700 */
+  text-align: center;
+  color: #6b7280; /* gray-500 */
+}
+
+@media (min-width: 768px) {
+  .main-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
