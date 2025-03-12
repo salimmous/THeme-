@@ -1,0 +1,288 @@
+/**
+ * Responsive styles for City Club Theme
+ */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 720px;
+  }
+
+  /* Header */
+  .menu-toggle {
+    display: block;
+  }
+
+  .primary-menu-container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+  }
+
+  .primary-menu-container.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #primary-menu {
+    flex-direction: column;
+  }
+
+  #primary-menu li {
+    margin: 10px 0;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  /* Activities */
+  .activity-content {
+    flex-direction: column;
+  }
+
+  .activity-text,
+  .activity-image-container {
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .activity-text {
+    margin-bottom: 30px;
+  }
+
+  /* Columns */
+  .col-md-6 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* Footer */
+  .footer-widgets {
+    flex-direction: column;
+  }
+
+  .footer-widget {
+    flex: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 540px;
+  }
+
+  /* Header */
+  .top-bar {
+    display: none;
+  }
+
+  .site-header.scrolled .main-header,
+  .main-header {
+    padding: 10px 0;
+  }
+
+  .site-title {
+    font-size: 20px;
+  }
+
+  .primary-menu-container {
+    top: 60px;
+  }
+
+  /* Hero */
+  .hero-banner {
+    height: 500px;
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    padding: 80px 20px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Forms */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input {
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-form button {
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  /* Grid items */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Hero */
+  .hero-banner {
+    height: 400px;
+  }
+
+  .hero-content {
+    padding: 60px 15px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-nav button {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Spacing */
+  .mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Cards */
+  .card {
+    padding: 1rem;
+  }
+
+  /* Activity */
+  .activity-title {
+    font-size: 24px;
+  }
+
+  .activity-overlay-title {
+    font-size: 28px;
+  }
+
+  /* CTA */
+  .cta-title {
+    font-size: 28px;
+  }
+
+  .cta-subtitle {
+    font-size: 18px;
+  }
+}
