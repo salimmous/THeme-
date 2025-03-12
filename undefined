@@ -1,0 +1,5 @@
+import ProDesignHome from "@/components/home/ProDesignHome";
+
+export default function CompletedProCityClubHomeStoryboard() {
+  return <ProDesignHome />;
+}
