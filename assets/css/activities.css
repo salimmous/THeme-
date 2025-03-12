@@ -1,0 +1,325 @@
+/**
+ * Activity styles for City Club Theme
+ */
+
+/* Activities Archive Page */
+.activities-archive {
+  padding: 60px 0;
+}
+
+.activities-filter {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.activities-filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.activities-filter-form select,
+.activities-filter-form input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.activities-filter-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.activities-filter-form button:hover {
+  background-color: var(--primary-hover);
+}
+
+.activities-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+}
+
+.activities-tab {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.activities-tab:hover {
+  background-color: #e9ecef;
+}
+
+.activities-tab.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Activity Card */
+.activity-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card-image {
+  height: 180px;
+  position: relative;
+}
+
+.activity-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.activity-card:hover .activity-card-image img {
+  transform: scale(1.05);
+}
+
+.activity-card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.activity-card-badge.beginner {
+  background-color: #28a745;
+  color: white;
+}
+
+.activity-card-badge.intermediate {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.activity-card-badge.advanced {
+  background-color: #dc3545;
+  color: white;
+}
+
+.activity-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card-header {
+  margin-bottom: 15px;
+}
+
+.activity-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.activity-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.activity-card-category {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.activity-card-duration {
+  display: inline-block;
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.activity-card-description {
+  color: #6c757d;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.activity-card-footer {
+  margin-top: auto;
+}
+
+.activity-card-button {
+  display: inline-block;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 0;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.activity-card-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Activity Single Page */
+.activity-single {
+  padding: 60px 0;
+}
+
+.activity-header {
+  margin-bottom: 40px;
+}
+
+.activity-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.activity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.activity-meta-item {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+}
+
+.activity-meta-item svg {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.activity-featured-image {
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.activity-featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.activity-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.activity-description {
+  margin-bottom: 30px;
+}
+
+.activity-description h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.activity-benefits {
+  margin-bottom: 30px;
+}
+
+.activity-benefits-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.activity-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-benefit {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.activity-benefit svg {
+  margin-right: 10px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.activity-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.activity-sidebar-widget {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.activity-sidebar-widget-title {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.activity-sidebar-widget-content {
+  padding: 20px;
+}
+
+.activity-details-list {
+  margin: 0;
+  padding: 0;
+  list-style:
