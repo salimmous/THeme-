@@ -2,6 +2,8 @@
 /**
  * Template part for displaying posts
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
  * @package City_Club
  */
 
@@ -31,30 +33,27 @@
 
 	<div class="entry-content">
 		<?php
-		if ( is_singular() ) :
-			the_content(
-				sprintF(
+		the_content(
+			sprintf(
+				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					esc_html__( 'Continue reading %s', 'city-club' ),
-					'<span class="screen-reader-text">' . get_the_title() . '</span>'
-				)
-			);
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'city-club' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				wp_kses_post( get_the_title() )
+			)
+		);
 
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'city-club' ),
-					'after'  => '</div>',
-				)
-			);
-		else :
-			the_excerpt();
-			?>
-			<a href="<?php the_permalink(); ?>" class="read-more-link">
-				<?php esc_html_e( 'Read More', 'city-club' ); ?>
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-			</a>
-		<?php
-		endif;
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'city-club' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 

@@ -2,54 +2,56 @@
 /**
  * The main template file
  *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
  * @package City_Club
  */
 
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-    <?php
-    if (is_home() && !is_front_page() && !empty(get_the_title(get_option('page_for_posts', true)))) :
-        ?>
-        <header class="page-header">
-            <div class="container">
-                <h1 class="page-title"><?php single_post_title(); ?></h1>
-            </div>
-        </header>
-    <?php endif; ?>
+	<main id="primary" class="site-main">
 
-    <div class="container">
-        <div class="content-area">
-            <?php
-            if (have_posts()) :
+		<?php
+		if ( have_posts() ) :
 
-                /* Start the Loop */
-                while (have_posts()) :
-                    the_post();
+			if ( is_home() && ! is_front_page() ) :
+				?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+				<?php
+			endif;
 
-                    /*
-                     * Include the Post-Type-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                     */
-                    get_template_part('template-parts/content', get_post_type());
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-                endwhile;
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
 
-                the_posts_navigation();
+			endwhile;
 
-            else :
+			the_posts_navigation();
 
-                get_template_part('template-parts/content', 'none');
+		else :
 
-            endif;
-            ?>
-        </div>
+			get_template_part( 'template-parts/content', 'none' );
 
-        <?php get_sidebar(); ?>
-    </div>
-</main><!-- #main -->
+		endif;
+		?>
+
+	</main><!-- #main -->
 
 <?php
+get_sidebar();
 get_footer();

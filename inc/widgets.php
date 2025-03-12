@@ -1,276 +1,271 @@
 <?php
 /**
- * City Club Widgets
+ * Custom widgets for City Club theme
  *
  * @package City_Club
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
-/**
- * Register additional widget areas
- * 
- * Note: The main widget areas are already registered in functions.php
- * This function only registers the Newsletter widget area to avoid function redeclaration
- */
-function city_club_register_additional_widget_areas() {
-	// Newsletter Widget Area.
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Newsletter', 'city-club' ),
-			'id'            => 'newsletter',
-			'description'   => esc_html__( 'Add newsletter subscription form here.', 'city-club' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		)
-	);
-}
-add_action( 'widgets_init', 'city_club_register_additional_widget_areas' );
-
-/**
- * Custom City Club Contact Info Widget
- */
-class City_Club_Contact_Info_Widget extends WP_Widget {
-
-	/**
-	 * Register widget with WordPress.
-	 */
-	public function __construct() {
-		parent::__construct(
-			'city_club_contact_info', // Base ID.
-			esc_html__( 'City Club: Contact Info', 'city-club' ), // Name.
-			array( 'description' => esc_html__( 'Display contact information with icons.', 'city-club' ) ) // Args.
-		);
-	}
-
-	/**
-	 * Front-end display of widget.
-	 *
-	 * @param array $args     Widget arguments.
-	 * @param array $instance Saved values from database.
-	 */
-	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
-
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
-
-		// Display contact information.
-		echo '<div class="footer-contact-info">';
-
-		if ( ! empty( $instance['address'] ) ) {
-			echo '<div class="contact-item">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
-			echo '<span>' . esc_html( $instance['address'] ) . '</span>';
-			echo '</div>';
-		}
-
-		if ( ! empty( $instance['phone'] ) ) {
-			echo '<div class="contact-item">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>';
-			echo '<a href="tel:' . esc_attr( preg_replace( '/[^0-9+]/', '', $instance['phone'] ) ) . '">' . esc_html( $instance['phone'] ) . '</a>';
-			echo '</div>';
-		}
-
-		if ( ! empty( $instance['email'] ) ) {
-			echo '<div class="contact-item">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>';
-			echo '<a href="mailto:' . esc_attr( $instance['email'] ) . '">' . esc_html( $instance['email'] ) . '</a>';
-			echo '</div>';
-		}
-
-		echo '</div>';
-
-		echo $args['after_widget'];
-	}
-
-	/**
-	 * Back-end widget form.
-	 *
-	 * @param array $instance Previously saved values from database.
-	 */
-	public function form( $instance ) {
-		$title   = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Contact Us', 'city-club' );
-		$address = ! empty( $instance['address'] ) ? $instance['address'] : '';
-		$phone   = ! empty( $instance['phone'] ) ? $instance['phone'] : '';
-		$email   = ! empty( $instance['email'] ) ? $instance['email'] : '';
-		?>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>"><?php esc_html_e( 'Address:', 'city-club' ); ?></label>
-			<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>" rows="3"><?php echo esc_textarea( $address ); ?></textarea>
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_html_e( 'Phone:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'phone' ) ); ?>" type="text" value="<?php echo esc_attr( $phone ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e( 'Email:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" type="email" value="<?php echo esc_attr( $email ); ?>">
-		</p>
-		<?php
-	}
-
-	/**
-	 * Sanitize widget form values as they are saved.
-	 *
-	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
-	 * @return array Updated safe values to be saved.
-	 */
-	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-
-		$instance['title']   = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
-		$instance['address'] = ! empty( $new_instance['address'] ) ? sanitize_textarea_field( $new_instance['address'] ) : '';
-		$instance['phone']   = ! empty( $new_instance['phone'] ) ? sanitize_text_field( $new_instance['phone'] ) : '';
-		$instance['email']   = ! empty( $new_instance['email'] ) ? sanitize_email( $new_instance['email'] ) : '';
-
-		return $instance;
-	}
-}
-
-/**
- * Custom City Club Social Links Widget
- */
-class City_Club_Social_Links_Widget extends WP_Widget {
-
-	/**
-	 * Register widget with WordPress.
-	 */
-	public function __construct() {
-		parent::__construct(
-			'city_club_social_links', // Base ID.
-			esc_html__( 'City Club: Social Links', 'city-club' ), // Name.
-			array( 'description' => esc_html__( 'Display social media links with icons.', 'city-club' ) ) // Args.
-		);
-	}
-
-	/**
-	 * Front-end display of widget.
-	 *
-	 * @param array $args     Widget arguments.
-	 * @param array $instance Saved values from database.
-	 */
-	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
-
-		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
-
-		// Display social links.
-		echo '<div class="social-links">';
-
-		if ( ! empty( $instance['facebook'] ) ) {
-			echo '<a href="' . esc_url( $instance['facebook'] ) . '" class="social-link" target="_blank" rel="noopener noreferrer">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>';
-			echo '</a>';
-		}
-
-		if ( ! empty( $instance['instagram'] ) ) {
-			echo '<a href="' . esc_url( $instance['instagram'] ) . '" class="social-link" target="_blank" rel="noopener noreferrer">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>';
-			echo '</a>';
-		}
-
-		if ( ! empty( $instance['twitter'] ) ) {
-			echo '<a href="' . esc_url( $instance['twitter'] ) . '" class="social-link" target="_blank" rel="noopener noreferrer">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>';
-			echo '</a>';
-		}
-
-		if ( ! empty( $instance['youtube'] ) ) {
-			echo '<a href="' . esc_url( $instance['youtube'] ) . '" class="social-link" target="_blank" rel="noopener noreferrer">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>';
-			echo '</a>';
-		}
-
-		if ( ! empty( $instance['linkedin'] ) ) {
-			echo '<a href="' . esc_url( $instance['linkedin'] ) . '" class="social-link" target="_blank" rel="noopener noreferrer">';
-			echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>';
-			echo '</a>';
-		}
-
-		echo '</div>';
-
-		echo $args['after_widget'];
-	}
-
-	/**
-	 * Back-end widget form.
-	 *
-	 * @param array $instance Previously saved values from database.
-	 */
-	public function form( $instance ) {
-		$title     = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Follow Us', 'city-club' );
-		$facebook  = ! empty( $instance['facebook'] ) ? $instance['facebook'] : '';
-		$instagram = ! empty( $instance['instagram'] ) ? $instance['instagram'] : '';
-		$twitter   = ! empty( $instance['twitter'] ) ? $instance['twitter'] : '';
-		$youtube   = ! empty( $instance['youtube'] ) ? $instance['youtube'] : '';
-		$linkedin  = ! empty( $instance['linkedin'] ) ? $instance['linkedin'] : '';
-		?>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'facebook' ) ); ?>"><?php esc_html_e( 'Facebook URL:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'facebook' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'facebook' ) ); ?>" type="url" value="<?php echo esc_url( $facebook ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'instagram' ) ); ?>"><?php esc_html_e( 'Instagram URL:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'instagram' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'instagram' ) ); ?>" type="url" value="<?php echo esc_url( $instagram ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'twitter' ) ); ?>"><?php esc_html_e( 'Twitter URL:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'twitter' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twitter' ) ); ?>" type="url" value="<?php echo esc_url( $twitter ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'youtube' ) ); ?>"><?php esc_html_e( 'YouTube URL:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'youtube' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'youtube' ) ); ?>" type="url" value="<?php echo esc_url( $youtube ); ?>">
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'linkedin' ) ); ?>"><?php esc_html_e( 'LinkedIn URL:', 'city-club' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'linkedin' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'linkedin' ) ); ?>" type="url" value="<?php echo esc_url( $linkedin ); ?>">
-		</p>
-		<?php
-	}
-
-	/**
-	 * Sanitize widget form values as they are saved.
-	 *
-	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
-	 * @return array Updated safe values to be saved.
-	 */
-	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-
-		$instance['title']     = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
-		$instance['facebook']  = ! empty( $new_instance['facebook'] ) ? esc_url_raw( $new_instance['facebook'] ) : '';
-		$instance['instagram'] = ! empty( $new_instance['instagram'] ) ? esc_url_raw( $new_instance['instagram'] ) : '';
-		$instance['twitter']   = ! empty( $new_instance['twitter'] ) ? esc_url_raw( $new_instance['twitter'] ) : '';
-		$instance['youtube']   = ! empty( $new_instance['youtube'] ) ? esc_url_raw( $new_instance['youtube'] ) : '';
-		$instance['linkedin']  = ! empty( $new_instance['linkedin'] ) ? esc_url_raw( $new_instance['linkedin'] ) : '';
-
-		return $instance;
-	}
-}
-
 /**
  * Register custom widgets
  */
-function city_club_register_custom_widgets() {
-	register_widget( 'City_Club_Contact_Info_Widget' );
-	register_widget( 'City_Club_Social_Links_Widget' );
+function city_club_register_widgets() {
+    register_widget( 'City_Club_Contact_Info_Widget' );
+    register_widget( 'City_Club_Recent_Activities_Widget' );
+    register_widget( 'City_Club_Club_Hours_Widget' );
 }
-add_action( 'widgets_init', 'city_club_register_custom_widgets' );
+add_action( 'widgets_init', 'city_club_register_widgets' );
+
+/**
+ * Contact Info Widget
+ */
+class City_Club_Contact_Info_Widget extends WP_Widget {
+
+    public function __construct() {
+        parent::__construct(
+            'city_club_contact_info',
+            esc_html__( 'City Club: Contact Info', 'city-club' ),
+            array( 'description' => esc_html__( 'Display contact information with icons', 'city-club' ) )
+        );
+    }
+
+    public function widget( $args, $instance ) {
+        echo $args['before_widget'];
+        
+        if ( ! empty( $instance['title'] ) ) {
+            echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+        }
+        
+        echo '<div class="contact-info-widget">';
+        
+        if ( ! empty( $instance['address'] ) ) {
+            echo '<div class="contact-item">';
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
+            echo '<span>' . esc_html( $instance['address'] ) . '</span>';
+            echo '</div>';
+        }
+        
+        if ( ! empty( $instance['phone'] ) ) {
+            echo '<div class="contact-item">';
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>';
+            echo '<a href="tel:' . esc_attr( $instance['phone'] ) . '">' . esc_html( $instance['phone'] ) . '</a>';
+            echo '</div>';
+        }
+        
+        if ( ! empty( $instance['email'] ) ) {
+            echo '<div class="contact-item">';
+            echo '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>';
+            echo '<a href="mailto:' . esc_attr( $instance['email'] ) . '">' . esc_html( $instance['email'] ) . '</a>';
+            echo '</div>';
+        }
+        
+        echo '</div>';
+        
+        echo $args['after_widget'];
+    }
+
+    public function form( $instance ) {
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Contact Us', 'city-club' );
+        $address = ! empty( $instance['address'] ) ? $instance['address'] : '';
+        $phone = ! empty( $instance['phone'] ) ? $instance['phone'] : '';
+        $email = ! empty( $instance['email'] ) ? $instance['email'] : '';
+        
+        ?>        
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'city-club' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+        </p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>"><?php esc_html_e( 'Address:', 'city-club' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>">
+        </p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_html_e( 'Phone:', 'city-club' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'phone' ) ); ?>" type="text" value="<?php echo esc_attr( $phone ); ?>">
+        </p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e( 'Email:', 'city-club' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" type="email" value="<?php echo esc_attr( $email ); ?>">
+        </p>
+        <?php
+    }
+
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+        $instance['address'] = ( ! empty( $new_instance['address'] ) ) ? sanitize_text_field( $new_instance['address'] ) : '';
+        $instance['phone'] = ( ! empty( $new_instance['phone'] ) ) ? sanitize_text_field( $new_instance['phone'] ) : '';
+        $instance['email'] = ( ! empty( $new_instance['email'] ) ) ? sanitize_email( $new_instance['email'] ) : '';
+
+        return $instance;
+    }
+}
+
+/**
+ * Recent Activities Widget
+ */
+class City_Club_Recent_Activities_Widget extends WP_Widget {
+
+    public function __construct() {
+        parent::__construct(
+            'city_club_recent_activities',
+            esc_html__( 'City Club: Recent Activities', 'city-club' ),
+            array( 'description' => esc_html__( 'Display recent activities with thumbnails', 'city-club' ) )
+        );
+    }
+
+    public function widget( $args, $instance ) {
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 3;
+
+        echo $args['before_widget'];
+        
+        if ( ! empty( $title ) ) {
+            echo $args['before_title'] . $title . $args['after_title'];
+        }
+
+        $activities_args = array(
+            'post_type' => 'activity',
+            'posts_per_page' => $number,
+            'post_status' => 'publish',
+        );
+
+        $activities_query = new WP_Query( $activities_args );
+
+        if ( $activities_query->have_posts() ) :
+            echo '<ul class="recent-activities-widget">';
+            
+            while ( $activities_query->have_posts() ) : $activities_query->the_post();
+                echo '<li class="recent-activity-item">';
+                if ( has_post_thumbnail() ) {
+                    echo '<div class="activity-thumbnail">';
+                    echo '<a href="' . esc_url( get_permalink() ) . '">';
+                    the_post_thumbnail( 'thumbnail' );
+                    echo '</a>';
+                    echo '</div>';
+                }
+                echo '<div class="activity-content">';
+                echo '<h4><a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a></h4>';
+                echo '<span class="activity-date">' . get_the_date() . '</span>';
+                echo '</div>';
+                echo '</li>';
+            endwhile;
+            
+            echo '</ul>';
+            
+            wp_reset_postdata();
+        else :
+            echo '<p>' . esc_html__( 'No activities found.', 'city-club' ) . '</p>';
+        endif;
+
+        echo $args['after_widget'];
+    }
+
+    public function form( $instance ) {
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Recent Activities', 'city-club' );
+        $number = ! empty( $instance['number'] ) ? absint( $instance['number'] ) : 3;
+        ?>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'city-club' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+        </p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of activities to show:', 'city-club' ); ?></label>
+            <input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo esc_attr( $number ); ?>" size="3">
+        </p>
+        <?php
+    }
+
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? absint( $new_instance['number'] ) : 3;
+
+        return $instance;
+    }
+}
+
+/**
+ * Club Hours Widget
+ */
+class City_Club_Club_Hours_Widget extends WP_Widget {
+
+    public function __construct() {
+        parent::__construct(
+            'city_club_club_hours',
+            esc_html__( 'City Club: Club Hours', 'city-club' ),
+            array( 'description' => esc_html__( 'Display club opening hours', 'city-club' ) )
+        );
+    }
+
+    public function widget( $args, $instance ) {
+        echo $args['before_widget'];
+        
+        if ( ! empty( $instance['title'] ) ) {
+            echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+        }
+        
+        echo '<ul class="club-hours">';
+        
+        $days = array(
+            'monday' => esc_html__( 'Monday', 'city-club' ),
+            'tuesday' => esc_html__( 'Tuesday', 'city-club' ),
+            'wednesday' => esc_html__( 'Wednesday', 'city-club' ),
+            'thursday' => esc_html__( 'Thursday', 'city-club' ),
+            'friday' => esc_html__( 'Friday', 'city-club' ),
+            'saturday' => esc_html__( 'Saturday', 'city-club' ),
+            'sunday' => esc_html__( 'Sunday', 'city-club' ),
+        );
+        
+        foreach ( $days as $day_id => $day_name ) {
+            echo '<li class="club-hours-item">';
+            echo '<span class="club-hours-day">' . $day_name . '</span>';
+            echo '<span class="club-hours-time">' . esc_html( $instance[$day_id] ) . '</span>';
+            echo '</li>';
+        }
+        
+        echo '</ul>';
+        
+        echo $args['after_widget'];
+    }
+
+    public function form( $instance ) {
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Club Hours', 'city-club' );
+        
+        $days = array(
+            'monday' => esc_html__( 'Monday', 'city-club' ),
+            'tuesday' => esc_html__( 'Tuesday', 'city-club' ),
+            'wednesday' => esc_html__( 'Wednesday', 'city-club' ),
+            'thursday' => esc_html__( 'Thursday', 'city-club' ),
+            'friday' => esc_html__( 'Friday', 'city-club' ),
+            'saturday' => esc_html__( 'Saturday', 'city-club' ),
+            'sunday' => esc_html__( 'Sunday', 'city-club' ),
+        );
+        
+        ?>        
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'city-club' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+        </p>
+        
+        <?php foreach ( $days as $day_id => $day_name ) : ?>
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( $day_id ) ); ?>"><?php echo $day_name; ?>:</label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $day_id ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $day_id ) ); ?>" type="text" value="<?php echo esc_attr( isset( $instance[$day_id] ) ? $instance[$day_id] : '6:00 AM - 11:00 PM' ); ?>">
+            </p>
+        <?php endforeach; ?>
+        <?php
+    }
+
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+        
+        $days = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday');
+        
+        foreach ( $days as $day ) {
+            $instance[$day] = ( ! empty( $new_instance[$day] ) ) ? sanitize_text_field( $new_instance[$day] ) : '';
+        }
+
+        return $instance;
+    }
+}
